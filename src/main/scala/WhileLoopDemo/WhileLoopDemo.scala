@@ -10,7 +10,7 @@ object WhileLoopDemo {
 
     while x < 20 do {
       println(x)
-      x+=1
+      x += 1
     }
 
   }
