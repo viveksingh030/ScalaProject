@@ -2,12 +2,10 @@ package ForLoop
 
 object ForLoopDemo {
   def main(args: Array[String]): Unit = {
-    for (i <- 1 to 10) {
+    for (i <- 1 to 10)
       println("i=" + i)
-    }
-    for (i <- 11 until (20)) {
+    for (i <- 11 until (20))
       println("i=" + i)
-    }
 
     // two loop
     // for loops can have multiple generators, as shown in this example:
@@ -28,10 +26,10 @@ object ForLoopDemo {
     for i <- ints do println(i)
 
     for i <- ints
-      do {
-        val x = i * 2
-        println(s"i = $i, x = $x")
-      }
+    do {
+      val x = i * 2
+      println(s"i = $i, x = $x")
+    }
 
     // for with Map
 
