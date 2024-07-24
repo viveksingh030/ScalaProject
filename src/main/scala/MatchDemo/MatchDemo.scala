@@ -1,4 +1,5 @@
 package MatchDemo
+import scala.util.matching.Regex
 
 object MatchDemo {
   def main(args: Array[String]): Unit = {
@@ -67,5 +68,28 @@ object MatchDemo {
     case class Dog(name: String)
 
     println(pattern(45))
+
+
+    val input = "Frank,123 Main,925-555-1943,95122"
+
+    // Extract the phone number using regex
+    val phoneRegex: Regex = """(\d{3})-(\d{3})-(\d{4})""".r
+    val phoneNumber = phoneRegex.findFirstIn(input).getOrElse("No match")
+    println("phoneNumber=" + phoneNumber)
+
+    // Convert each part to an integer and store in a tuple
+    val phoneTuple: Option[(Int, Int, Int)] = phoneNumber match {
+      case phoneRegex(area, prefix, line) =>
+        Some((area.toInt, prefix.toInt, line.toInt))
+      case _ => None
+    }
+
+    // Print the result
+    phoneTuple match {
+      case Some((area, prefix, line)) =>
+        println(s"Phone parts: ($area, $prefix, $line)")
+      case None =>
+        println("Could not parse phone number")
+    }
   }
 }
