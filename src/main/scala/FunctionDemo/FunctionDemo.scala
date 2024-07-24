@@ -1,7 +1,6 @@
 package FunctionDemo
 
 import java.util.Date
-import scala.annotation.targetName
 
 object FunctionDemo {
   def main(args: Array[String]): Unit = {
@@ -11,7 +10,6 @@ object FunctionDemo {
     println(defaultParameterFunc());
     println(defaultParameterFunc(60));
     println(defaultParameterFunc(80, 20));
-    println(Math.+(50, 60))
 
     //partially applies function
     val date = new Date
@@ -32,8 +30,8 @@ object FunctionDemo {
 
     def square(x: Int): Int = x * x
 
-    @targetName("add")
-    def +(x: Int, y: Int): Int = x + y
+//    @targetName("add")
+//    def +(x: Int, y: Int): Int = x + y
 
     def add(x: Int, y: Int): Int = {
        x + y;
