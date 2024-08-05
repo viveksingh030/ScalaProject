@@ -3,6 +3,9 @@ package ListDemo
 object ListDemo {
   def main(args: Array[String]): Unit = {
     var list: List[Int] = List(1, 2, 3, 4, 5, 6)
+    println("sum=" + list.reduceLeft((a, b) => a + b))
+    println("sum=" + list.reduceRight((a, b) => a + b))
+    println("sum=" + list.foldLeft(0)((a, b) => a + b))
     printIntegerList(list)
     println()
     print(list.head)
